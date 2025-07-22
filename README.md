@@ -6,8 +6,14 @@
 
 ---
 
-![NVIDIA Logo](images/nvidia_logo.png)
-![VS Code Logo](images/vscode_logo.png)
+<p align="center">
+  <img src="images/nvidia_logo.png" alt="NVIDIA Logo" width="120"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="images/vscode_logo.png" alt="VS Code Logo" width="100"/>
+</p>
+
+
+
 
 ---
 
@@ -186,15 +192,6 @@ Device name: NVIDIA GeForce RTX 2070
 * Avoid mixing CUDA versions — keep your driver, toolkit, and PyTorch in sync.
 * Nightly builds are for early adopters — upgrade once stable release supports your CUDA version.
 * Use Studio Drivers for development; Game Ready Drivers are tuned for performance but less stable.
-
----
-
-## 🖼️ Logos
-
-Logos used in this guide:
-
-* ![NVIDIA](images/nvidia_logo.png)
-* ![VS Code](images/vscode_logo.png)
 
 ---
 
