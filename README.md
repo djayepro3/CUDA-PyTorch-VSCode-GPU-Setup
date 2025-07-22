@@ -19,14 +19,18 @@
 
 ## 📚 Table of Contents
 
-1. [🖥️ Install NVIDIA GPU](#️install-your-nvidia-graphics-card-windows-10)
-2. [⚙️ Install NVIDIA Drivers](#️install-nvidia-drivers)
-3. [🧠 Install CUDA Toolkit](#install-nvidia-cuda-toolkit)
-4. [💻 Enable GPU Acceleration in VS Code](#️enable-gpu-acceleration-in-visual-studio-code)
-5. [🔥 Install PyTorch with CUDA Support](#install-pytorch-with-cuda-support)
-6. [🔍 Check PyTorch GPU Access](#check-gpu-detection-in-pytorch)
-7. [🐛 Troubleshooting Common Issues](#troubleshooting-mismatched-cuda--cpu-only-build)
-8. [🎉 Conclusion](#️conclusion)
+1. [🖥️ Install NVIDIA GPU](#️-install-your-nvidia-graphics-card-windows-10)
+2. [⚙️ Install NVIDIA Drivers](#-install-nvidia-drivers)
+3. [🧠 Install CUDA Toolkit](#-install-nvidia-cuda-toolkit)
+4. [💻 Enable GPU Acceleration in VS Code](#-enable-gpu-acceleration-in-visual-studio-code)
+5. [🔥 Install PyTorch with CUDA Support](#-install-pytorch-with-cuda-support)
+6. [🔍 Check PyTorch GPU Access](#-check-gpu-detection-in-pytorch)
+7. [🐛 Troubleshooting Common Issues](#-troubleshooting-mismatched-cuda--cpu-only-build)
+8. [📘 Detailed Setup Reference](#-detailed-setup-reference)
+9. [🎉 Conclusion](#-conclusion)
+10. [🧊 Tips](#-tips)
+11. [💬 Feedback](#-feedback)
+
 
 ---
 
@@ -170,6 +174,14 @@ venv\Scripts\activate
 
 5. **Run the GPU check again.**
 
+
+---
+
+## 📘 Detailed Setup Reference
+
+📄 For a more in-depth explanation, you can view the full setup guide here:  
+[**CUDA_PyTorch_VSCode.txt**](setup/CUDA_PyTorch_VSCode.txt)
+
 ---
 
 ## 🎉 Conclusion
@@ -198,4 +210,15 @@ Device name: NVIDIA GeForce RTX 2070
 ## 💬 Feedback
 
 If you encounter issues or have suggestions, feel free to open an issue or fork the repo and contribute!
+
+To clon the repo, follow these steps:
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/djayepro3/CUDA-PyTorch-VSCode-GPU-Setup
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd CUDA-PyTorch-VSCode-GPU-Setup
+    ```
 
