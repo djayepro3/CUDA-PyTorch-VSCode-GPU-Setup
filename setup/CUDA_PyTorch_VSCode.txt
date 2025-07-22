@@ -1,0 +1,151 @@
+
+##############################################################################################################################################
+# Author: Dishanand Jayeprokash
+# Date Created: 22 July 2025
+# Date Modified: 22 July 2025
+##############################################################################################################################################
+
+
+** Install graphics card (GPU) - Windows 10 version **
+
+* Connect the card to your PC and make sure proper voltage supply *
+
+##############################################################################################################################################
+
+** Install NVIDIA Drivers (Deep Learning Applications) **
+
+The driver enables your GPU to communicate with the OS.
+
+* Download and install from: https://www.nvidia.com/en-us/drivers/ * (Use the "Manual Driver Search")
+
+NVIDIA Studio Drivers are generally the better choice over Game Ready Drivers. Here's why:
+
+- Stability: Studio Drivers undergo more rigorous testing and validation, making them more stable for long-running training jobs.
+- Compatibility: They’re optimized for creative and compute-intensive applications like TensorFlow, PyTorch, and CUDA-based workloads.
+- Update Frequency: They’re updated less frequently than Game Ready Drivers, which means fewer disruptions from unexpected changes.
+
+##############################################################################################################################################
+
+** Install NVIDIA CUDA Toolkit ** 
+
+* Download and install from: https://developer.nvidia.com/cuda-toolkit *
+
+* Check if it is installed, run the following on VS Code Terminal (ctrl + shift + `): nvcc --version *
+
+Why the CUDA Toolkit is essential:
+
+- Deep learning frameworks like PyTorch and TensorFlow depend on it to access GPU acceleration. Without it, they can't tap into your GPU’s computational power.
+- Your NVIDIA driver alone only covers hardware-level access—great for graphics, not enough for machine learning.
+- The CUDA toolkit provides specialized libraries (like cuDNN, cuBLAS) and tools (like nvcc, the CUDA compiler) needed to process tensors, build neural nets, and optimize performance.
+
+##############################################################################################################################################
+
+** Steps to enable GPU acceleration in VS Code **
+
+1. Locate VS Code executable:
+Find the .exe file for VS Code on your computer. The default location is usually in the AppData\Local\Programs\Microsoft VS Code folder.
+
+2. Add VS Code to the graphics settings:
+Open your operating system's graphics settings (e.g., in Windows, search for "Graphics settings").
+Browse to and add the VS Code executable file. 
+Select "High performance" or the equivalent option for your system to enable the GPU.
+
+3. Enable GPU acceleration in VS Code settings:
+Open VS Code and go to Settings (File > Preferences > Settings or Ctrl+,).
+Search for "GPU Acceleration".
+Locate the "Terminal: Integrated: Gpu Acceleration" setting and set it to "on".
+
+##############################################################################################################################################
+
+** Check if GPU is recognized by PyTorch **
+
+1.
+Install pytorch from the requirements.txt file: pip install -r requirements.txt   
+(details are provided in the Win_venv.txt file)
+
+or
+
+pip install torch torchvision torchaudio
+
+2.
+import torch
+
+print("PyTorch version:", torch.__version__)
+print("CUDA available:", torch.cuda.is_available())
+print("CUDA version:", torch.version.cuda)
+print("Device name:", torch.cuda.get_device_name(0) if torch.cuda.is_available() else "No GPU detected")
+
+You will get something like that depending on your GPU type:
+
+PyTorch version: 2.9.0.dev20250716+cu129
+CUDA available: True
+CUDA version: 12.9
+Device name: NVIDIA GeForce RTX 2070
+
+
+You may encounter this problem (Mismatched CUDA Version & PyTorch Build):
+
+Solution:
+
+1. Check if the drivers are updated by running on the python notebook: "nvidia-smi" or "nvidia-smi -q" (more detailed than nvidia-smi). It checks if driver loads correctly.
+
+2. Run the following (not terminal but run python notebook or script): torch.backends.cudnn.enabled (If True, )
+
+3. If step 2 returns None or doesn’t match your system CUDA, reinstall PyTorch with CUDA support. Uninstall your current PyTorch on terminal: pip uninstall torch torchvision torchaudio
+
+4. pip install torch torchvision torchaudio
+
+5. Run the following in notebook:
+
+import torch
+
+print("PyTorch version:", torch.__version__)
+print("CUDA available:", torch.cuda.is_available())
+print("CUDA version:", torch.version.cuda)
+print("Device name:", torch.cuda.get_device_name(0) if torch.cuda.is_available() else "No GPU detected")
+
+If it shows the following:
+PyTorch version: 2.7.1+cpu 
+CUDA available: False 
+CUDA version: None 
+Device name: No GPU detected
+
+Follow steps 8 and 9, if it doesn't work, try the following:
+
+It tells everything: you've got the CPU-only build of PyTorch installed, which means it doesn’t even try to talk to your GPU. 
+That’s why torch.cuda.is_available() returns False, and why torch.version.cuda is None.
+
+6. Follow step 4 again
+
+7. Install a CUDA-compatible build (nightly version for CUDA 12.9): 
+
+pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu129
+
+Note: The --pre flag installs a pre-release (nightly) build — this is required because CUDA 12.9 support is still rolling out.
+Versioning Caution: Mention that nightly builds are less stable and should be upgraded once the official version supports CUDA 12.9.
+
+8. Deactivate your venv in the terminal: deactivate
+
+9. Restart Visual Studio Code — make sure it’s using the same Python environment where you installed this version and reactivate venv: venv\scripts\activate
+Run step 5 again and if sucessful, you will get the following:
+
+PyTorch version: 2.9.0.dev20250716+cu129
+CUDA available: True
+CUDA version: 12.9
+Device name: NVIDIA GeForce RTX 2070
+
+
+
+Taaaadddaaaaaa, congratulations!!!!! You're good to work with PyTorch now and leverage GPU capabilities for your deep learning models.
+
+
+
+
+
+
+
+
+
+
+
+
