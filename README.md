@@ -91,12 +91,8 @@ nvcc --version
 
 ## 🔥 Install PyTorch with CUDA Support
 
-💥 **Nightly Build for CUDA 12.9:**
-
 ```bash
-pip uninstall torch torchvision torchaudio
-
-pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu129
+pip install torch torchvision torchaudio
 ```
 
 📦 Alternatively, using `requirements.txt`:
@@ -104,6 +100,8 @@ pip install --pre torch torchvision torchaudio --index-url https://download.pyto
 ```bash
 pip install -r requirements.txt
 ```
+The detailed explanation to build the requirements.txt file is given in this repo:
+[requirements.txt](https://github.com/djayepro3/Windows-Venv-Python-Setup/blob/main/README.md#-sample-requirementstxt)
 
 ---
 
@@ -159,6 +157,7 @@ print(torch.backends.cudnn.enabled)
 ```
 
 3. **Uninstall and reinstall PyTorch:**
+   💥 **Nightly Build for CUDA 12.9:**
 
 ```bash
 pip uninstall torch torchvision torchaudio
