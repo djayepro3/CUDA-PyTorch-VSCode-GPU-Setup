@@ -210,7 +210,7 @@ Device name: NVIDIA GeForce RTX 2070
 
 If you encounter issues or have suggestions, feel free to open an issue or fork the repo and contribute!
 
-To clon the repo, follow these steps:
+To clone the repo, follow these steps:
 
 1. Clone the repository:
     ```bash
