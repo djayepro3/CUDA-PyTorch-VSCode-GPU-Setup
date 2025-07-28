@@ -101,7 +101,7 @@ pip install torch torchvision torchaudio
 pip install -r requirements.txt
 ```
 The detailed explanation to build the requirements.txt file is given in this repo:
-[requirements.txt](https://github.com/djayepro3/Windows-Venv-Python-Setup/blob/main/README.md#-sample-requirementstxt)
+[requirements.txt](https://github.com/djayepro3/Windows-Venv-Python-Setup/blob/main/README.md#-install-required-packages)
 
 ---
 
