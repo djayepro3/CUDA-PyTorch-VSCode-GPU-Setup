@@ -1,8 +1,8 @@
 # 🚀 CUDA + PyTorch + VS Code GPU Setup (Windows + Linux)
 
-> 📌 **Author:** Dishanand Jayeprokash
-> 🗓️ **Created:** 17 July 2025
-> ✏️ **Last Modified:** 18 September 2026
+> 📌 **Author:** Dishanand Jayeprokash \
+> 🗓️ **Created:** 17 July 2025 \
+> ✏️ **Last Modified:** 18 September 2026 \
 > 🔗 **Reference:** [StackOverflow: PyTorch CUDA False](https://stackoverflow.com/questions/60987997/why-torch-cuda-is-available-returns-false-even-after-installing-pytorch-with)
 
 ---
